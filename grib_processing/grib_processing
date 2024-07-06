@@ -1,0 +1,23 @@
+# grib_processing/generate_heatmap.py
+
+import matplotlib.pyplot as plt
+
+def generate_heatmap(data, output_path, title):
+    """
+    Funkcja do generowania mapy ciepła.
+
+    Args:
+        data (dict): Słownik z danymi meteorologicznymi.
+        output_path (str): Ścieżka do zapisu wygenerowanej mapy ciepła.
+        title (str): Tytuł mapy ciepła.
+    """
+    latitudes = data['latitudes']
+    longitudes = data['longitudes']
+    values = data['values']
+
+    plt.figure(figsize=(10, 8))
+    plt.imshow(values.reshape(len(latitudes), len(longitudes)), cmap='coolwarm', interpolation='nearest')
+    plt.colorbar(label='Temperature (K)')
+    plt.title(title)
+    plt.savefig(output_path)
+    plt.close()

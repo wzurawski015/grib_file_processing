@@ -1,7 +1,7 @@
 # Ścieżki do katalogów i ustawienia konfiguracyjne
-paths:
-  data: "../data/meteo"
-  image_folder: "../data/flask_data/1_surface_0"
+#data_directory: "../data/meteo"
+source_directory: "../data/meteo"
+target_directory: "../data/flask_data/1_surface_0"
 
 # Ustawienia htmx
 htmx:

@@ -1,0 +1,3 @@
+<!-- /home/wz/grib_file_processing/flask_app/templates/image.html -->
+
+<img src="/images/{{ image_name }}" alt="Heatmap" hx-get="/load-image/{{ next_index }}" hx-trigger="load, every 1s" hx-swap="outerHTML">

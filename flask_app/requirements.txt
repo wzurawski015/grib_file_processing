@@ -1,4 +1,2 @@
-# Zależności Python dla aplikacji Flask
-flask
-htmx
-pyyaml
+Flask==2.0.3
+Werkzeug==2.0.3

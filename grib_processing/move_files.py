@@ -2,24 +2,26 @@
 # Ścieżka: grib_processing/move_files.py
 
 import os
-import shutil
 import yaml
+import shutil
 
-# Wczytaj konfigurację
-with open('../config.yaml', 'r') as f:
+# Wczytaj plik konfiguracyjny
+config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'config.yaml'))
+with open(config_path, 'r') as f:
     config = yaml.safe_load(f)
 
-def move_files():
-    """Przenosi pliki zawierające w nazwie _1_surface_0.png do odpowiedniego katalogu."""
-    src_dir = config['paths']['image_folder']
-    dest_dir = os.path.join(config['paths']['image_folder'], '1_surface_0')
-    
-    if not os.path.exists(dest_dir):
-        os.makedirs(dest_dir)
-    
-    for file in os.listdir(src_dir):
-        if '_1_surface_0.png' in file:
-            shutil.move(os.path.join(src_dir, file), os.path.join(dest_dir, file))
+# Ścieżki katalogów
+source_dir = config['source_directory']
+target_dir = config['target_directory']
 
-if __name__ == "__main__":
+def move_files():
+    """Przenoszenie plików z katalogu źródłowego do katalogu docelowego."""
+    if not os.path.exists(target_dir):
+        os.makedirs(target_dir)
+    for filename in os.listdir(source_dir):
+        if '_1_surface_0.png' in filename:
+            shutil.move(os.path.join(source_dir, filename), os.path.join(target_dir, filename))
+    print("Pliki zostały pomyślnie przeniesione")
+
+if __name__ == '__main__':
     move_files()
