@@ -6,7 +6,7 @@ import shutil
 import yaml
 
 # Wczytaj konfigurację
-with open('/app/config.yaml', 'r') as f:
+with open('../config.yaml', 'r') as f:
     config = yaml.safe_load(f)
 
 def move_files():
