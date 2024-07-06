@@ -1,0 +1,24 @@
+grib_file_processing/
+├── config/
+│   └── config.yaml
+├── flask_app/
+│   ├── app.py
+│   ├── templates/
+│   │   └── index.html
+│   ├── static/
+│   │   └── images/
+│   ├── Dockerfile
+│   ├── requirements.txt
+├── grib_processing/
+│   ├── process_grib.py
+│   ├── generate_heatmaps.py
+│   ├── move_images.py
+│   ├── utils.py
+│   ├── Dockerfile
+│   ├── requirements.txt
+├── tests/
+│   ├── test_process_grib.py
+│   ├── test_generate_heatmaps.py
+├── .gitignore
+├── README.md
+└── docker-compose.yml
