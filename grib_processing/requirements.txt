@@ -1,0 +1,4 @@
+# Zależności Python dla przetwarzania GRIB
+eccodes
+matplotlib
+pyyaml

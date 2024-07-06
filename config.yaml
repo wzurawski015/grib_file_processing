@@ -1,0 +1,8 @@
+# Ścieżki do katalogów i ustawienia konfiguracyjne
+paths:
+  data: "../data/meteo"
+  image_folder: "../data/flask_data/1_surface_0"
+
+# Ustawienia htmx
+htmx:
+  trigger_interval: "1s"

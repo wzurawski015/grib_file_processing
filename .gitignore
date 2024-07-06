@@ -1,11 +1,13 @@
-venv/
+# Ignorowanie wirtualnych środowisk
+venv_flask/
+venv_grib/
+
+# Ignorowanie plików tymczasowych i logów
+*.log
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-.Python
-.env
 .DS_Store
-.idea/
-.vscode/
-data/
+.env
+
+#Ignorowanie plików konfiguracyjnych
+#config.yaml

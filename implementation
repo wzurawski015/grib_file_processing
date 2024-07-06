@@ -1,0 +1,47 @@
+
+## Instrukcja wdrożenia
+
+1. Sklonuj repozytorium:
+    ```sh
+    git clone https://github.com/wzurawski015/grib_file_processing.git
+    cd grib_file_processing
+    ```
+
+2. Utwórz i aktywuj wirtualne środowisko dla aplikacji Flask:
+    ```sh
+    cd flask_app
+    python3 -m venv venv_flask
+    source venv_flask/bin/activate
+    pip install -r requirements.txt
+    cd ..
+    ```
+
+3. Utwórz i aktywuj wirtualne środowisko dla przetwarzania GRIB:
+    ```sh
+    cd grib_processing
+    python3 -m venv venv_grib
+    source venv_grib/bin/activate
+    pip install -r requirements.txt
+    cd ..
+    ```
+
+4. Skonfiguruj plik `config.yaml`:
+    - Ustaw odpowiednie ścieżki do katalogów z danymi i folderów na obrazy.
+
+5. Uruchom Docker Compose:
+    ```sh
+    docker-compose up --build
+    ```
+
+## Aktualizowanie repozytorium na GitHub
+
+1. Dodaj zmiany do repozytorium:
+    ```sh
+    git add .
+    git commit -m "Opis zmian"
+    ```
+
+2. Wypchnij zmiany na GitHub:
+    ```sh
+    git push origin main
+    ```

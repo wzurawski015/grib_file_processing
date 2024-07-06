@@ -1,0 +1,4 @@
+# Zależności Python dla aplikacji Flask
+flask
+htmx
+pyyaml

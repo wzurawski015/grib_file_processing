@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heatmap Animation</title>
+    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+</head>
+<body>
+    <div hx-trigger="load, every {{ config['htmx']['trigger_interval'] }}"
+         hx-get="/load-image/0"
+         hx-swap="outerHTML"
+         id="image-container">
+        <img src="/images/2024-06-28_1800_1_surface_0.png" alt="Heatmap">
+    </div>
+</body>
+</html>

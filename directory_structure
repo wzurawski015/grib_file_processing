@@ -1,24 +1,15 @@
 grib_file_processing/
-├── config/
-│   └── config.yaml
-├── flask_app/
-│   ├── app.py
-│   ├── templates/
-│   │   └── index.html
-│   ├── static/
-│   │   └── images/
-│   ├── Dockerfile
-│   ├── requirements.txt
-├── grib_processing/
-│   ├── process_grib.py
-│   ├── generate_heatmaps.py
-│   ├── move_images.py
-│   ├── utils.py
-│   ├── Dockerfile
-│   ├── requirements.txt
-├── tests/
-│   ├── test_process_grib.py
-│   ├── test_generate_heatmaps.py
-├── .gitignore
-├── README.md
-└── docker-compose.yml
+├── config.yaml # Plik konfiguracyjny dla ścieżek i ustawień
+├── docker-compose.yml # Konfiguracja Docker Compose
+├── flask_app/ # Zawiera aplikację Flask do serwowania map ciepła
+│   ├── app.py # Główny skrypt aplikacji Flask
+│   ├── static/ # Pliki statyczne (np. CSS, JavaScript)
+│   ├── templates/ # Szablony HTML
+│   ├── venv_flask/ # Wirtualne środowisko dla aplikacji Flask
+│   └── requirements.txt # Zależności Python dla aplikacji Flask
+└── grib_processing/ # Zawiera skrypty do przetwarzania plików GRIB
+    ├── process_grib.py # Skrypt do przetwarzania plików GRIB i generowania map ciepła
+    ├── generate_heatmap.py # Skrypt do generowania map ciepła
+    ├── move_files.py # Skrypt do przenoszenia plików
+    ├── venv_grib/ # Wirtualne środowisko dla przetwarzania GRIB
+    └── requirements.txt # Zależności Python dla przetwarzania GRIB

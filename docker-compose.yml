@@ -1,0 +1,17 @@
+version: '3'
+services:
+  flask_app:
+    build: ./flask_app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../data:/data
+    environment:
+      - CONFIG_FILE=/app/config.yaml
+
+  grib_processing:
+    build: ./grib_processing
+    volumes:
+      - ../data:/data
+    environment:
+      - CONFIG_FILE=/app/config.yaml
