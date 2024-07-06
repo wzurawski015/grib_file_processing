@@ -7,10 +7,10 @@ import pygrib
 def parse_filename(filename):
     """
     Funkcja do parsowania nazwy pliku GRIB.
-    
+
     Args:
         filename (str): Nazwa pliku GRIB.
-        
+
     Returns:
         tuple: Zawierający datę i godzinę, typ pliku oraz inne parametry.
     """
@@ -22,18 +22,18 @@ def parse_filename(filename):
         day = match.group(3)
         hour = match.group(4)
         intervals = int(match.group(5))
-        
+
         base_time = f"{year}-{month}-{day} {hour}:00"
         minutes = intervals * 5
         additional_hours = minutes // 60
         additional_minutes = minutes % 60
-        
+
         # Konwersja do pełnej godziny i minut
         final_hour = int(hour) + additional_hours
         final_minute = additional_minutes
-        
+
         final_time = f"{year}-{month}-{day} {final_hour:02d}:{final_minute:02d}"
-        return (final_time, 'gl')
+        return (final_time, 'gl', f"{intervals:03d}")
     else:
         raise ValueError("Nazwa pliku nie pasuje do wzorca")
 
