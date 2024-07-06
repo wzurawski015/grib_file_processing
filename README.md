@@ -1,5 +1,4 @@
 # grib_file_processing
-# grib_file_processing
 ## Opis projektu
 
 Projekt ten ma na celu analizę i wizualizację danych meteorologicznych zapisanych w plikach GRIB edition 1 przy użyciu bibliotek ecCodes, Flask, htmx oraz Docker. Projekt generuje mapy ciepła i serwuje je jako dynamicznie zmieniające się obrazy na stronie internetowej.
