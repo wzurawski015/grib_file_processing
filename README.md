@@ -1,4 +1,4 @@
-EADME.md dla projektu grib_file_processing:
+README.md dla projektu grib_file_processing:
 
 grib_file_processing/
 ├── config.yaml # Plik konfiguracyjny dla ścieżek i ustawień
