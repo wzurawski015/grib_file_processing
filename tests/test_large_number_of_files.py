@@ -39,7 +39,6 @@ class TestMoveFiles(unittest.TestCase):
         for file in ['unmatched_file.txt', 'another_file.doc']:
             self.assertTrue(os.path.exists(os.path.join(self.test_source_dir, file)))
 
-    @unittest.skip("Pominięcie testu dużej liczby plików")
     def test_large_number_of_files(self):
         """Testowanie funkcji move_files z dużą liczbą plików."""
         large_number_of_files = [f'surface_{i}.png' for i in range(100)]
