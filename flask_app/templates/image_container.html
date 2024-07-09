@@ -1,7 +1,0 @@
-<!-- Ścieżka: flask_app/templates/image_container.html -->
-<div hx-trigger="load, every {{config['htmx']['trigger_interval']}}"
-     hx-get="/load-image/0"
-     hx-swap="outerHTML"
-     id="image-container">
-    <img src="/images/{{ image_path }}" alt="Heatmap">
-</div>

@@ -15,7 +15,15 @@ trigger_interval = config.get('trigger_interval', '2s')
 
 @app.route('/')
 def index():
-    return render_template('index.html', trigger_interval=trigger_interval)
+    try:
+        images = sorted([img for img in os.listdir(image_folder) if img.endswith('.png')])
+        if not images:
+            return "No images found in the directory.", 404
+        first_image = images[0]
+        return render_template('index.html', first_image=first_image, trigger_interval=trigger_interval)
+    except Exception as e:
+        app.logger.error(f"Error loading images: {e}")
+        return str(e), 500
 
 @app.route('/load-image/<int:index>')
 def load_image(index):

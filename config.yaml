@@ -10,4 +10,4 @@ specific_longitudes: [12, 16, 20, 24]
 #target_directory: "../data/flask_data/"
 # Ustawienia htmx
 htmx:
-  trigger_interval: "2s"
+  trigger_interval: "1s"

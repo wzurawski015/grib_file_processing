@@ -1,5 +1,3 @@
-<!-- /home/wz/grib_file_processing/flask_app/templates/index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +7,8 @@
     <script src="https://unpkg.com/htmx.org@1.7.0"></script>
 </head>
 <body>
-    <div hx-trigger="load, every 1s" hx-get="/load-image/0" hx-swap="outerHTML" id="image-container">
-        <img src="/images/2024-06-28_1800_1_surface_0.png" alt="Heatmap">
+    <div hx-trigger="load, every {{ trigger_interval }}" hx-get="/load-image/0" hx-swap="outerHTML" id="image-container">
+        <img src="/images/{{ first_image }}" alt="Heatmap">
     </div>
 </body>
 </html>
