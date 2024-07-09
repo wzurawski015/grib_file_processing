@@ -20,10 +20,10 @@ source_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', confi
 # Mapowanie wzorców plików na podkatalogi
 file_mapping = {
     'surface_0.png': '1_surface_0',
-    'heightAboveGround_2_5.png': '5_heightAboveGround_2',
+#    'heightAboveGround_2_5.png': '5_heightAboveGround_2',
     'isobaricInhPa_100.png': '29_isobaricInhPa_100',
-    'heightAboveGround_2_7.png': '7_heightAboveGround_2',
-    'heightAboveGround_2_8.png': '8_heightAboveGround_2',
+#    'heightAboveGround_2_7.png': '7_heightAboveGround_2',
+    'heightAboveGround_2.png': '8_heightAboveGround_2',
     'isobaricInhPa_300.png': '30_isobaricInhPa_300',
     'isobaricInhPa_500.png': '31_isobaricInhPa_500',
     'isobaricInhPa_700.png': '36_isobaricInhPa_700',

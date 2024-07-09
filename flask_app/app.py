@@ -1,7 +1,3 @@
-"""
-Ścieżka: /home/wz/grib_file_processing/flask_app/app.py
-"""
-
 from flask import Flask, render_template, send_from_directory, abort
 import os
 import yaml
@@ -14,11 +10,12 @@ with open(config_path, 'r') as f:
     config = yaml.safe_load(f)
 
 # Konfiguracja ścieżki do katalogu z obrazami
-image_folder = os.path.abspath(os.path.join(os.path.dirname(config_path), config['target_directory']))
+image_folder = os.path.abspath(os.path.join(os.path.dirname(config_path), config['data_directory_flask_h2']))
+trigger_interval = config.get('trigger_interval', '2s')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', trigger_interval=trigger_interval)
 
 @app.route('/load-image/<int:index>')
 def load_image(index):
@@ -29,7 +26,7 @@ def load_image(index):
         if index >= len(images):
             index = 0
         image_name = images[index]
-        return render_template('image.html', image_name=image_name, next_index=index + 1)
+        return render_template('image.html', image_name=image_name, next_index=index + 1, trigger_interval=trigger_interval)
     except Exception as e:
         app.logger.error(f"Error loading images: {e}")
         return str(e), 500
