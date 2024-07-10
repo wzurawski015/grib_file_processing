@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heatmap Viewer</title>
     <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+    <style>
+        #image-container {
+            max-width: 100%;
+            height: auto;
+            text-align: center;
+        }
+        #image-container img {
+            max-width: 100%;
+            height: auto;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
 </head>
 <body>
-    <div hx-trigger="load, every {{ trigger_interval }}" hx-get="/load-image/0" hx-swap="outerHTML" id="image-container">
-        <img src="/images/{{ first_image }}" alt="Heatmap">
+    <div id="image-container">
+        <img id="heatmap-image" src="/images/{{ first_image }}" alt="Heatmap" hx-get="/load-image/0" hx-trigger="load, every {{ trigger_interval }}" hx-swap="outerHTML">
     </div>
 </body>
 </html>

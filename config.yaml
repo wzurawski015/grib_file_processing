@@ -1,8 +1,10 @@
 # Ścieżki do katalogów i ustawienia konfiguracyjne
 data_directory: "../data"
 data_directory_grib: "../data/meteo"
+data_directory_logo: "../data/logos"
 data_directory_flask: "../data/flask_data"
 data_directory_flask_h2: "../data/flask_data/8_heightAboveGround_2"
+
 display_specific_points: true
 specific_latitudes: [48, 50, 52, 54, 56]
 specific_longitudes: [12, 16, 20, 24]
@@ -11,3 +13,4 @@ specific_longitudes: [12, 16, 20, 24]
 # Ustawienia htmx
 htmx:
   trigger_interval: "1s"
+  

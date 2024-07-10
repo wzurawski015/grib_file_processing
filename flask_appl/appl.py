@@ -11,6 +11,7 @@ with open(config_path, 'r') as f:
 
 # Konfiguracja ścieżki do katalogu z obrazami
 image_folder = os.path.abspath(os.path.join(os.path.dirname(config_path), config['data_directory_flask_h2']))
+logo_folder = os.path.abspath(os.path.join(os.path.dirname(config_path), config['data_directory_logo']))
 trigger_interval = config['htmx'].get('trigger_interval', '5s')  # Domyślna wartość to '5s'
 
 @app.route('/')
@@ -46,6 +47,13 @@ def images(image_name):
         return send_from_directory(image_folder, image_name)
     except FileNotFoundError:
         abort(404, description=f"File {image_name} not found.")
+
+@app.route('/logos/<logo_name>')
+def logos(logo_name):
+    try:
+        return send_from_directory(logo_folder, logo_name)
+    except FileNotFoundError:
+        abort(404, description=f"File {logo_name} not found.")
 
 @app.route('/favicon.ico')
 def favicon():
