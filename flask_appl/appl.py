@@ -12,7 +12,7 @@ with open(config_path, 'r') as f:
 # Konfiguracja ścieżki do katalogu z obrazami
 image_folder = os.path.abspath(os.path.join(os.path.dirname(config_path), config['data_directory_flask_h2']))
 logo_folder = os.path.abspath(os.path.join(os.path.dirname(config_path), config['data_directory_logo']))
-trigger_interval = config['htmx'].get('trigger_interval', '5s')  # Domyślna wartość to '5s'
+trigger_interval = config['htmx'].get('trigger_interval', '1s')  # Domyślna wartość to '5s'
 
 @app.route('/')
 def index():
